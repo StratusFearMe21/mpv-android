@@ -16,6 +16,7 @@ fi
 PKG_CONFIG="pkg-config --static" \
 ./waf configure \
 	--disable-iconv --lua=52 \
+	--enable-libplacebo \
 	--enable-libmpv-shared \
 	--disable-manpage-build \
 	-o "`pwd`/_build$ndk_suffix"
