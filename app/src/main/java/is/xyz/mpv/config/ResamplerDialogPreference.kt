@@ -65,7 +65,7 @@ class ResamplerDialogPreference @JvmOverloads constructor(
             s.setSelection(idx, false)
 
         // populate EditText's
-        e1.setText(sharedPreferences.getString("${key}_cutoff", ",cutoff=0.97").substring(8))
+        e1.setText((sharedPreferences.getString("${key}_cutoff", ",cutoff=0.97") ?: ",cutoff=0.97").substring(8))
 
         val va2 = sharedPreferences.getString("${key}_dithering", "")
         val idx2 = resampler_dithering_values.indexOf(va2)
