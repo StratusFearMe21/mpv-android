@@ -24,11 +24,7 @@ build_opts=(
 	'-Dmanpage-build=disabled'
 )
 
-if [ -d $build ]; then
-	build_opts+=('--reconfigure')
-fi
-
-meson setup $build --cross-file "$prefix_dir"/crossfile.txt \
+meson $build --cross-file "$prefix_dir"/crossfile.txt \
 	"${build_opts[@]}"
 
 ninja -C $build -j$cores
