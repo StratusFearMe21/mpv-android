@@ -24,7 +24,6 @@ loadarch () {
 		export ndk_suffix=
 		export ndk_triple=arm-linux-androideabi
 		export android_abi=armeabi-v7a
-		export android_abi=
 		cc_triple=armv7a-linux-androideabi$apilvl
 		prefix_name=armv7l
 	elif [ "$1" == "arm64" ]; then
