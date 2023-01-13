@@ -21,8 +21,6 @@
         android:defaultValue="true"
         android:summaryOff="@string/pitch_correction_summary_disabled"
         android:summaryOn="@string/pitch_correction_summary_enabled"
-        android:entries="@array/deband_entries"
-        android:entryValues="@array/deband_values"
         android:title="@string/pref_audio_pitch_correction_title" />
 
 </PreferenceScreen>
