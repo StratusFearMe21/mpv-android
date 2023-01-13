@@ -179,7 +179,8 @@
     <string name="pref_audio_resampler_summary">Android will always resample audio down to 48khz, (except in special cases like LDAC). Switching to SoX will produce a more faithful output, but may cause high power consumption</string>
     <string name="pref_audio_replaygain_title">Replay Gain</string>
     <string name="replaygain_switch">Enable Replay Gain</string>
-    <string name="replaygain_source">Source</string>
-    <string name="pref_audio_resampler_cutoff">Cutoff</string>
+    <string name="replaygain_source">Source:</string>
+    <string name="resampler_cutoff">Cutoff:</string>
     <string name="resampler_cutoff_hint">a decimal percentage</string>
+    <string name="resampler_dither">Dither:</string>
 </resources>
