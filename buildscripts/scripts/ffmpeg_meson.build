@@ -1,0 +1,31 @@
+project('mpv-android')
+
+cmake = import('cmake')
+
+dav1d = subproject('dav1d')
+dav1d_dep = dav1d.get_variable('dav1d_dep')
+meson.override_dependency('dav1d', dav1d_dep)
+
+mbedtls_opts = cmake.subproject_options()
+mbedtls_opts.add_cmake_defines({
+  'ANDROID_ABI': get_option('android_abi'),
+  'ANDROID_PLATFORM': 'android-21',
+  'ENABLE_PROGRAMS' : false,
+  'ENABLE_TESTING' : false
+})
+mbedtls = cmake.subproject('mbedtls', options : mbedtls_opts)
+mbedtls_dep = mbedtls.dependency('mbedtls')
+meson.override_dependency('mbedtls', mbedtls_dep)
+
+# soxr_opts = cmake.subproject_options()
+# soxr_opts.add_cmake_defines({
+#   'ANDROID_ABI': get_option('android_abi'),
+#   'ANDROID_PLATFORM': 'android-21',
+#   'BUILD_SHARED_LIBS': false,
+#   'BUILD_TESTS': false
+# })
+# soxr = cmake.subproject('soxr', options : soxr_opts)
+# soxr_dep = soxr.dependency('soxr')
+# meson.override_dependency('libsoxr', soxr_dep)
+
+subproject('ffmpeg')

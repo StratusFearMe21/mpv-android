@@ -7,21 +7,24 @@
 
 mkdir -p deps && cd deps
 
-# mbedtls
-if [ ! -d mbedtls ]; then
+# ffmpeg
+if [ ! -d ffmpeg ]; then
+	mkdir -p ffmpeg/subprojects
+	pushd ffmpeg/subprojects
+	git clone https://gitlab.freedesktop.org/StratusFearMe21/ffmpeg
+	# [ $TRAVIS -eq 1 ] && (  git checkout $v_travis_ffmpeg )
+
+	# mbedtls
 	mkdir mbedtls
 	$WGET https://github.com/ARMmbed/mbedtls/archive/mbedtls-$v_mbedtls.tar.gz -O - | \
 		tar -xz -C mbedtls --strip-components=1
+
+	# dav1d
+	git clone https://code.videolan.org/videolan/dav1d.git
+
+	popd
 fi
 
-# dav1d
-[ ! -d dav1d ] && git clone https://code.videolan.org/videolan/dav1d.git
-
-# ffmpeg
-if [ ! -d ffmpeg ]; then
-	git clone https://github.com/FFmpeg/FFmpeg ffmpeg
-	[ $TRAVIS -eq 1 ] && ( cd ffmpeg; git checkout $v_travis_ffmpeg )
-fi
 
 # freetype2
 [ ! -d freetype2 ] && git clone git://git.sv.nongnu.org/freetype/freetype2.git -b VER-$v_freetype

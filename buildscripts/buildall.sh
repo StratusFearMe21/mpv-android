@@ -23,21 +23,26 @@ loadarch () {
 	if [ "$1" == "armv7l" ]; then
 		export ndk_suffix=
 		export ndk_triple=arm-linux-androideabi
+		export android_abi=armeabi-v7a
+		export android_abi=
 		cc_triple=armv7a-linux-androideabi$apilvl
 		prefix_name=armv7l
 	elif [ "$1" == "arm64" ]; then
 		export ndk_suffix=-arm64
 		export ndk_triple=aarch64-linux-android
+		export android_abi=arm64-v8a
 		cc_triple=$ndk_triple$apilvl
 		prefix_name=arm64
 	elif [ "$1" == "x86" ]; then
 		export ndk_suffix=-x86
 		export ndk_triple=i686-linux-android
+		export android_abi=x86
 		cc_triple=$ndk_triple$apilvl
 		prefix_name=x86
 	elif [ "$1" == "x86_64" ]; then
 		export ndk_suffix=-x64
 		export ndk_triple=x86_64-linux-android
+		export android_abi=x86_64
 		cc_triple=$ndk_triple$apilvl
 		prefix_name=x86_64
 	else
@@ -67,6 +72,8 @@ setup_prefix () {
 	local cpu_family=${ndk_triple%%-*}
 	[ "$cpu_family" == "i686" ] && cpu_family=x86
 
+	cmake_ndk=$(realpath ./sdk/android-ndk-r25b/build/cmake/android.toolchain.cmake)
+
 	# meson wants to be spoonfed this file, so create it ahead of time
 	# also define: release build, static libs and no source downloads at runtime(!!!)
 	cat >"$prefix_dir/crossfile.tmp" <<CROSSFILE
@@ -85,6 +92,8 @@ system = 'android'
 cpu_family = '$cpu_family'
 cpu = '${CC%%-*}'
 endian = 'little'
+[properties]
+cmake_toolchain_file = '$cmake_ndk'
 CROSSFILE
 	# also avoid rewriting it needlessly
 	if cmp -s "$prefix_dir"/crossfile.{tmp,txt}; then
