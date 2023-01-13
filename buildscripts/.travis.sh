@@ -4,6 +4,11 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 . ./include/depinfo.sh
 
+# Insance build times without mold
+export CC_LD="mold"
+# mold specific
+cp /usr/lib/LLVMgold.so sdk/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/
+
 build_prefix() {
 	echo "==> Building the prefix ($travis_tarball)..."
 

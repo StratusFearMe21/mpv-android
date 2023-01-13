@@ -11,6 +11,7 @@ addons:
       - pkg-config
       - libtool
       - ninja-build
+      - mold
       - python3-pip
       - python3-setuptools
 
