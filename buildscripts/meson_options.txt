@@ -1,1 +1,0 @@
-option('android_abi', type : 'string')
