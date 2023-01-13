@@ -25,7 +25,7 @@ cpuflags=
 ../configure \
 	--target-os=android --enable-cross-compile --cross-prefix=$ndk_triple- --cc=$CC --nm=$NM \
 	--extra-libs="-lm" --arch=${ndk_triple%%-*} --cpu=$cpu --pkg-config=pkg-config \
-	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib -flto" \
+	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib" \
 	--enable-{jni,mediacodec,mbedtls,libdav1d,libsoxr} --disable-vulkan \
 	--disable-static --enable-shared --enable-{gpl,version3} \
 	--disable-{stripping,doc,programs} \

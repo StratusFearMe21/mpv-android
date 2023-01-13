@@ -35,7 +35,7 @@ class ScalerDialogPreference @JvmOverloads constructor(
         super.onBindDialogView(view)
         myView = view
 
-        val s = myView.findViewById<Spinner>(R.id.resampler)
+        val s = myView.findViewById<Spinner>(R.id.scaler)
         val e1 = myView.findViewById<EditText>(R.id.param1)
         val e2 = myView.findViewById<EditText>(R.id.param2)
 
@@ -60,7 +60,7 @@ class ScalerDialogPreference @JvmOverloads constructor(
         if (!positiveResult)
             return
 
-        val s = myView.findViewById<Spinner>(R.id.resampler)
+        val s = myView.findViewById<Spinner>(R.id.scaler)
         val e1 = myView.findViewById<EditText>(R.id.param1)
         val e2 = myView.findViewById<EditText>(R.id.param2)
 

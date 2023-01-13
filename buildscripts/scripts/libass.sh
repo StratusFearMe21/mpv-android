@@ -16,7 +16,7 @@ fi
 mkdir -p _build$ndk_suffix
 cd _build$ndk_suffix
 
-CFLAGS="-flto" LDFLAGS="-flto" ../configure \
+../configure \
 	--host=$ndk_triple --with-pic \
 	--enable-static --disable-shared \
 	--disable-require-system-font-provider

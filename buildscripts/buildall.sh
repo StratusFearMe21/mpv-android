@@ -79,7 +79,6 @@ setup_prefix () {
 buildtype = 'release'
 default_library = 'static'
 wrap_mode = 'nodownload'
-b_lto = true
 [binaries]
 c = '$CC'
 cpp = '$CXX'

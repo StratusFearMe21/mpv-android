@@ -13,5 +13,5 @@ fi
 
 $0 clean # separate building not supported, always clean
 
-CFLAGS="-flto" LDFLAGS="-flto" make -j$cores no_test
+make -j$cores no_test
 make DESTDIR="$prefix_dir" install

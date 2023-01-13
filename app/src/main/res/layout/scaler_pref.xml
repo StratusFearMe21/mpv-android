@@ -12,7 +12,7 @@
         android:paddingBottom="8dp" />
 
     <Spinner
-        android:id="@+id/resampler"
+        android:id="@+id/scaler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@android:id/message"
@@ -23,7 +23,7 @@
         android:id="@+id/tableRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/resampler"
+        android:layout_below="@id/scaler"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
