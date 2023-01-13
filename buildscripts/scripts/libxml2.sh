@@ -20,12 +20,13 @@ cmake .. -GNinja \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_TOOLCHAIN_FILE=$DIR/sdk/android-ndk-r25b/build/cmake/android.toolchain.cmake \
 	-DANDROID_ABI=$android_abi \
-	-DANDROID_PLATFORM=android-29 \
+	-DANDROID_PLATFORM=android-21 \
 	-DCMAKE_INSTALL_PREFIX="$prefix_dir" \
 	-DBUILD_SHARED_LIBS=off \
 	-DLIBXML2_WITH_ICONV=off \
 	-DLIBXML2_WITH_LZMA=off \
-	-DLIBXML2_WITH_PYTHON=off
+	-DLIBXML2_WITH_PYTHON=off \
+	-DLIBXML2_WITH_TESTS=off
 
 ninja -j$cores
 ninja install
