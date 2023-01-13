@@ -107,6 +107,7 @@
     <string name="pref_gesture_custom_helptext">Когда жест касания установлен на \"Custom\", его можно привязать к любой команде, отредактировав input.conf. Коды клавиш: <b>0x10001</b> (слева), <b>0x10002</b> (в центре), <b>0x10003</b> (справа).\nНапример, вы можете привязать поиск к 6 с:\n\t\t0x10003 no-osd seek 6</string>
 
     <string name="pref_header_video">Видео</string>
+    <string name="pref_header_audio">звук</string>
 
     <string name="pref_video_upscale_title">Фильтр увеличения масштаба</string>
 

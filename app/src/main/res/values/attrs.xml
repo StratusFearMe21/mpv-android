@@ -13,6 +13,15 @@
         <attr name="sync_default" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="ResamplerPreferenceDialog">
+        <attr name="resampler_entries" format="reference" />
+        <attr name="resampler_values" format="reference" />
+        <attr name="resampler_dithering_entries" format="reference" />
+        <attr name="resampler_dithering_values" format="reference" />
+        <attr name="resampler_cutoff" format="string" />
+        <attr name="resampler_dithering" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="ConfigEditDialog">
         <attr name="filename" format="string" />
     </declare-styleable>

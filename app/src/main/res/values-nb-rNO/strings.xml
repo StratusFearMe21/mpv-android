@@ -32,6 +32,7 @@
     <string name="pref_header_gestures">Håndvendinger</string>
 
     <string name="pref_header_video">Video</string>
+    <string name="pref_header_audio">Audio</string>
 
     <string name="pref_video_upscale_title">Oppskaleringsmetode</string>
 

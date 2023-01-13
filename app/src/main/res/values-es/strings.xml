@@ -62,6 +62,7 @@
     <!-- Strings related to Settings -->
     <string name="pref_header_general">General</string>
     <string name="pref_header_video">Vídeo</string>
+    <string name="pref_header_audio">Audio</string>
     <string name="pref_header_ui">Interfaz de usuario</string>
     <string name="pref_header_gestures">Gestos táctiles</string>
     <string name="pref_header_developer">Desarrollador</string>

@@ -17,6 +17,9 @@ fi
 # dav1d
 [ ! -d dav1d ] && git clone https://code.videolan.org/videolan/dav1d.git
 
+# libsoxr
+[ ! -d soxr ] && git clone https://git.code.sf.net/p/soxr/code soxr
+
 # ffmpeg
 if [ ! -d ffmpeg ]; then
 	git clone https://github.com/FFmpeg/FFmpeg ffmpeg

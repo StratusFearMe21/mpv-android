@@ -19,15 +19,23 @@
         android:layout_alignParentStart="true"
         android:padding="16dp" />
 
+    <Spinner
+        android:id="@+id/dithering"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resampler"
+        android:layout_alignParentStart="true"
+        android:padding="16dp" />
+
     <TableRow
         android:id="@+id/tableRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/resampler"
+        android:layout_below="@id/dithering"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp">
 
         <TextView
             android:id="@+id/textView"
@@ -35,43 +43,17 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:labelFor="@id/param1"
-            android:text="@string/scaler_param1"
+            android:text="@string/pref_audio_resampler_cutoff"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <EditText
-            android:id="@+id/param1"
+            android:id="@+id/cutoff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:inputType="numberSigned|numberDecimal" />
+            android:ems="10"
+            android:hint="@string/resampler_cutoff_hint"
+            android:inputType="numberDecimal" />
 
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tableRow"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="16dp">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:labelFor="@id/param2"
-            android:text="@string/scaler_param2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-        <EditText
-            android:id="@+id/param2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:inputType="numberSigned|numberDecimal" />
-
-    </TableRow>
 </RelativeLayout>

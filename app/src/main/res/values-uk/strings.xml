@@ -152,4 +152,5 @@
     <!-- File picker -->
     <string name="nnf_name">Імя</string>
     <string name="nnf_permission_external_write_denied">Дозвіл на доступ до файлової системи відмовлено</string>
+    <string name="pref_header_audio">звуковий</string>
 </resources>

@@ -99,6 +99,44 @@
         -->
     </string-array>
 
+    <string-array name="resampler_entries">
+        <item>ffmpeg (swr)</item>
+        <item>SoX High Quality</item>
+        <item>SoX Very High Quality</item>
+    </string-array>
+    <string-array name="resampler_values" translatable="false">
+        <item>resampler=swr</item>
+        <item>resampler=soxr,precision=20</item>
+        <item>resampler=soxr,precision=28</item>
+    </string-array>
+
+    <string-array name="resampler_dithering_entries">
+        <item>None (fastest)</item>
+        <item>Rectangular (fast)</item>
+        <item>Triangular (fast)</item>
+        <item>Triangular with high pass (fast)</item>
+        <item>Lipshitz noise shaping (slow)</item>
+        <item>F-weighted noise shaping (slow)</item>
+        <item>Modified-e-weighted noise shaping (slow)</item>
+        <item>Improved-e-weighted noise shaping (slow)</item>
+        <item>Shibata noise shaping (slow)</item>
+        <item>Low shibata noise shaping (slow)</item>
+        <item>High shibata noise shaping (slow)</item>
+    </string-array>
+    <string-array name="resampler_dithering_values" translatable="false">
+        <item>,dither_method=0</item>
+        <item>,dither_method=rectangular</item>
+        <item>,dither_method=triangular</item>
+        <item>,dither_method=triangular_hp</item>
+        <item>,dither_method=lipshitz</item>
+        <item>,dither_method=f_weighted</item>
+        <item>,dither_method=modified_e_weighted</item>
+        <item>,dither_method=improved_e_weighted</item>
+        <item>,dither_method=shibata</item>
+        <item>,dither_method=low_shibata</item>
+        <item>,dither_method=high_shibata</item>
+    </string-array>
+
     <string-array name="stats_entries">
         <item>None</item>
         <item>FPS counter</item>

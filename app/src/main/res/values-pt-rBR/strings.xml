@@ -79,6 +79,7 @@
 
 
     <string name="pref_header_video">Vídeo</string>
+    <string name="pref_header_audio">Áudio</string>
 
     <string name="pref_video_upscale_title">Filtro Upscaling</string>
 

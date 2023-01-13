@@ -96,6 +96,7 @@
     <string name="pref_gesture_tap_right_title">ダブルタップ(画面右側)</string>
 
     <string name="pref_header_video">ビデオ</string>
+    <string name="pref_header_audio">オーディオ</string>
 
     <string name="pref_video_upscale_title">アップスケール フィルタ</string>
 

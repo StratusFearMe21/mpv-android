@@ -160,4 +160,5 @@
     <!-- File picker -->
     <string name="nnf_name">Ad</string>
     <string name="nnf_permission_external_write_denied">Dosya sistemine erişim izni reddedildi</string>
+    <string name="pref_header_audio">işitsel</string>
 </resources>

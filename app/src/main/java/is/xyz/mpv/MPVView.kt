@@ -86,6 +86,12 @@ internal class MPVView(context: Context, attrs: AttributeSet) : SurfaceView(cont
             MPVLib.setOptionString("deband", "yes")
         }
 
+        val resampler = sharedPreferences.getString("resampler", "") ?: "resampler=swr"
+        val resampler_dither = sharedPreferences.getString("resampler_dithering", "") ?: ",dither_method=0"
+        val resampler_cutoff = sharedPreferences.getString("resampler_cutoff", "") ?: ",cutoff=0.97"
+        MPVLib.setOptionString("audio-swresample-o", resampler + resampler_dither + resampler_cutoff)
+
+
         val vidsync = sharedPreferences.getString("video_sync", resources.getString(R.string.pref_video_interpolation_sync_default))
         MPVLib.setOptionString("video-sync", vidsync!!)
 

@@ -69,6 +69,7 @@ class SettingsActivity : PreferenceActivity() {
             GesturesPreferenceFragment::class.java.name,
             UIPreferenceFragment::class.java.name,
             VideoPreferenceFragment::class.java.name,
+            AudioPreferenceFragment::class.java.name,
             DeveloperPreferenceFragment::class.java.name,
             AdvancedPreferenceFragment::class.java.name
     )
@@ -143,6 +144,23 @@ class SettingsActivity : PreferenceActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             addPreferencesFromResource(R.xml.pref_video)
+            setHasOptionsMenu(true)
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            val id = item.itemId
+            if (id == android.R.id.home) {
+                activity.onBackPressed()
+                return true
+            }
+            return super.onOptionsItemSelected(item)
+        }
+    }
+
+    class AudioPreferenceFragment : PreferenceFragment() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            addPreferencesFromResource(R.xml.pref_audio)
             setHasOptionsMenu(true)
         }
 

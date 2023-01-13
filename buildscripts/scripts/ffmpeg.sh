@@ -23,10 +23,10 @@ cpuflags=
 [[ "$ndk_triple" == "arm"* ]] && cpuflags="$cpuflags -mfpu=neon -mcpu=cortex-a8"
 
 ../configure \
-	--target-os=android --enable-cross-compile --cross-prefix=$ndk_triple- --cc=$CC \
-	--arch=${ndk_triple%%-*} --cpu=$cpu --pkg-config=pkg-config \
-	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib" \
-	--enable-{jni,mediacodec,mbedtls,libdav1d} --disable-vulkan \
+	--target-os=android --enable-cross-compile --cross-prefix=$ndk_triple- --cc=$CC --nm=$NM \
+	--extra-libs="-lm" --arch=${ndk_triple%%-*} --cpu=$cpu --pkg-config=pkg-config \
+	--extra-cflags="-I$prefix_dir/include $cpuflags" --extra-ldflags="-L$prefix_dir/lib -flto" \
+	--enable-{jni,mediacodec,mbedtls,libdav1d,libsoxr} --disable-vulkan \
 	--disable-static --enable-shared --enable-{gpl,version3} \
 	--disable-{stripping,doc,programs} \
 	--disable-{muxers,encoders,devices} --enable-encoder=mjpeg,png
