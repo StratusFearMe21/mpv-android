@@ -110,6 +110,15 @@
         <item>resampler=soxr,precision=28</item>
     </string-array>
 
+    <string-array name="replaygain_entries">
+        <item>Track</item>
+        <item>Album</item>
+    </string-array>
+    <string-array name="replaygain_values" translatable="false">
+        <item>track</item>
+        <item>album</item>
+    </string-array>
+
     <string-array name="resampler_dithering_entries">
         <item>None (fastest)</item>
         <item>Rectangular (fast)</item>

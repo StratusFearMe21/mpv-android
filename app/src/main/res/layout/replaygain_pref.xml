@@ -11,19 +11,51 @@
         android:paddingEnd="16dp"
         android:paddingBottom="8dp" />
 
-    <Spinner
-        android:id="@+id/resampler"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/replaygain"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@android:id/message"
-        android:layout_alignParentStart="true"
-        android:padding="16dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:switchPadding="8dp"
+        android:text="@string/replaygain_switch" />
 
     <TableRow
-        android:id="@+id/tableRow"
+        android:id="@+id/replaygainTableRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/resampler"
+        android:layout_below="@id/replaygain"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/replaygainTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:labelFor="@id/replaygain_source"
+            android:text="@string/replaygain_source"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <Spinner
+            android:id="@+id/replaygain_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:padding="16dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/replaygainTableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/replaygainTableRow"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
@@ -35,11 +67,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:labelFor="@id/param1"
-            android:text="@string/resampler_cutoff"
+            android:text="@string/replaygain_preamp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <EditText
-            android:id="@+id/cutoff"
+            android:id="@+id/replaygain_preamp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,29 +80,30 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/ditheringableRow"
+        android:id="@+id/replaygainTableRow3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tableRow"
+        android:layout_below="@id/replaygainTableRow2"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp">
 
         <TextView
-            android:id="@+id/ditheringTextView"
+            android:id="@+id/replaygainTextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/resampler_dither"
+            android:labelFor="@id/param1"
+            android:text="@string/replaygain_fallback"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-        <Spinner
-            android:id="@+id/dithering"
+        <EditText
+            android:id="@+id/replaygain_fallback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:padding="16dp" />
+            android:ems="10"
+            android:inputType="numberDecimal" />
 
     </TableRow>
 

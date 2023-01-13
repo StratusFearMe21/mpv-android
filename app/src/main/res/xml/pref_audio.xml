@@ -3,10 +3,17 @@
     <is.xyz.mpv.config.ResamplerDialogPreference
         android:key="resampler"
         android:summary="@string/pref_audio_resampler_summary"
+        android:dialogMessage="@string/resampler_message"
         android:title="@string/pref_audio_resampler_title"
         app:resampler_entries="@array/resampler_entries"
         app:resampler_values="@array/resampler_values"
         app:resampler_dithering_entries="@array/resampler_dithering_entries"
         app:resampler_dithering_values="@array/resampler_dithering_values" />
+
+    <is.xyz.mpv.config.ReplaygainDialogPreference
+        android:key="replaygain"
+        android:title="@string/pref_audio_replaygain_title"
+        app:replaygain_entries="@array/replaygain_entries"
+        app:replaygain_values="@array/replaygain_values" />
 
 </PreferenceScreen>

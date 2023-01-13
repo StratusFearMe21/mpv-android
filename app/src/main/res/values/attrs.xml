@@ -22,6 +22,14 @@
         <attr name="resampler_dithering" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="ReplaygainPreferenceDialog">
+        <attr name="replaygain_entries" format="reference" />
+        <attr name="replaygain_values" format="reference" />
+        <attr name="replaygain_source" format="string" />
+        <attr name="replaygain_preamp" format="string" />
+        <attr name="replaygain_fallback" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="ConfigEditDialog">
         <attr name="filename" format="string" />
     </declare-styleable>

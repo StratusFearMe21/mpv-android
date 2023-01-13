@@ -67,7 +67,11 @@ internal class MPVView(context: Context, attrs: AttributeSet) : SurfaceView(cont
 
                 Property("video_tscale", "tscale"),
                 Property("video_tscale_param1", "tscale-param1"),
-                Property("video_tscale_param2", "tscale-param2")
+                Property("video_tscale_param2", "tscale-param2"),
+
+                Property("replaygain_source", "replaygain"),
+                Property("replaygain_preamp", "replaygain-preamp"),
+                Property("replaygain_fallback", "replaygain-fallback")
         )
 
         for ((preference_name, mpv_option) in opts) {
@@ -86,9 +90,9 @@ internal class MPVView(context: Context, attrs: AttributeSet) : SurfaceView(cont
             MPVLib.setOptionString("deband", "yes")
         }
 
-        val resampler = sharedPreferences.getString("resampler", "") ?: "resampler=swr"
-        val resampler_dither = sharedPreferences.getString("resampler_dithering", "") ?: ",dither_method=0"
-        val resampler_cutoff = sharedPreferences.getString("resampler_cutoff", "") ?: ",cutoff=0.97"
+        val resampler = sharedPreferences.getString("resampler", "")
+        val resampler_dither = sharedPreferences.getString("resampler_dithering", "")
+        val resampler_cutoff = sharedPreferences.getString("resampler_cutoff", "")
         MPVLib.setOptionString("audio-swresample-o", resampler + resampler_dither + resampler_cutoff)
 
 
@@ -111,6 +115,7 @@ internal class MPVView(context: Context, attrs: AttributeSet) : SurfaceView(cont
         MPVLib.setOptionString("hwdec", hwdec)
         MPVLib.setOptionString("hwdec-codecs", "h264,hevc,mpeg4,mpeg2video,vp8,vp9")
         MPVLib.setOptionString("ao", "audiotrack,opensles")
+        MPVLib.setOptionString("gapless-audio", "yes")
         MPVLib.setOptionString("tls-verify", "yes")
         MPVLib.setOptionString("tls-ca-file", "${this.context.filesDir.path}/cacert.pem")
         MPVLib.setOptionString("input-default-bindings", "yes")
