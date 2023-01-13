@@ -185,4 +185,8 @@
     <string name="replaygain_preamp">Preamp (dB):</string>
     <string name="replaygain_fallback">Fallback Preamp (dB):</string>
     <string name="resampler_message">Switching to SoX will produce a more faithful output, but may cause high power consumption</string>
+    <string name="pitch_correction_summary_enabled">Playing with a speed different from normal will not change the pitch of the audio</string>
+    <string name="pitch_correction_summary_disabled">Playing with a speed different from normal will change the pitch of the audio</string>
+    <string name="pref_audio_pitch_correction_title">Pitch Correction</string>
+    <string name="playback_speed">Playback Speed</string>
 </resources>

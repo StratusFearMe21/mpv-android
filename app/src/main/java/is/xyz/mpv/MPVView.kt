@@ -80,6 +80,8 @@ internal class MPVView(context: Context, attrs: AttributeSet) : SurfaceView(cont
                 MPVLib.setOptionString(mpv_option, preference)
         }
 
+        MPVLib.setOptionString("audio-pitch-correction", if (sharedPreferences.getBoolean("audio_pitch_correction", false)) "yes" else "no" )
+
         // set more options
 
         val debandMode = sharedPreferences.getString("video_debanding", "")
